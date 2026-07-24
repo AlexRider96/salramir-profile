@@ -133,7 +133,7 @@ const PROJECTS = [
       "Collection management with per-card condition and quantity tracking, public/private visibility, and Postgres Row Level Security enforcing per-user data access.",
       "Auth, theming, and role/subscription system (admin, store, premium) built on Supabase, with DB-trigger-protected role changes and persisted light/dark preferences.",
     ],
-    tags: ["React Native", "Expo", "TypeScript", "Supabase", "PostgreSQL"],
+    tags: ["React Native", "Expo", "TypeScript", "Supabase", "PostgreSQL", "Claude"],
     color: "#7A3B5E",
   },
 ];
@@ -148,12 +148,11 @@ const EDUCATION = [
       "Focused coursework in Game Programming and Mobile Application Development; active member of the IDEAS Software Engineering Club.",
       "Built a broad engineering foundation across C++, Java, Python, PHP, C#, and GML, alongside Oracle SQL/PL-SQL, HTML5, CSS, AngularJS, and React.js.",
       "Extended studies into robotics programming and represented the university at multiple Marketing, Leadership, and Software Engineering conferences.",
-      "Developed across a range of tooling, including Android Studio, Visual Studio, XCode, Unity, NetBeans, and SQL Developer.",
+      "Developed across a range of tooling, including Android Studio, Visual Studio, XCode, Unity, and NetBeans.",
     ],
     tags: ["C++", "Java", "Python", "PHP", "C#", "Oracle SQL", "AngularJS", "React", "React Native", "Swift", "Objective-C"],
   },
 ];
-
 const RESUME_URL = `${import.meta.env.BASE_URL}resume.pdf`;
 
 function NavBar({ active, onNav }: { active: string; onNav: (s: string) => void }) {
