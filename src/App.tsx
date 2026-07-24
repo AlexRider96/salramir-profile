@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { ArrowUpRight, Linkedin, Mail } from "lucide-react";
 
-const NAV_LINKS = ["About", "Experience", "Highlights", "Skills", "Education", "Contact"];
+const NAV_LINKS = ["About", "Experience", "Highlights", "Skills", "Projects", "Education", "Contact"];
 
 const STATS = [
   { v: "7+", l: "Years Experience" },
@@ -120,6 +120,22 @@ const SKILLS = [
   { category: "iOS Development", items: ["SwiftUI", "UIKit", "SDK Development", "XCTest", "XCUITest"], color: "#2D5F8A" },
   { category: "Tools & Practices", items: ["Git", "CI/CD", "App Store Deployment", "Certificate Management", "Agile/Scrum"], color: "#4A6741" },
   { category: "Backend / Web", items: ["PHP", "MySQL", "NoSQL"], color: "#7A3B5E" },
+];
+
+const PROJECTS = [
+  {
+    name: "Bulkies",
+    tagline: "Local trading card app for One Piece TCG & Magic: The Gathering",
+    url: "https://bulkies.netlify.app/home",
+    description:
+      "A mobile app for in-person, community-level card trading between friends — not a public marketplace. Built end-to-end with React Native and Supabase, covering live card search, pricing, and collection management across two card games.",
+    bullets: [
+      "Collection management with per-card condition and quantity tracking, public/private visibility, and Postgres Row Level Security enforcing per-user data access.",
+      "Auth, theming, and role/subscription system (admin, store, premium) built on Supabase, with DB-trigger-protected role changes and persisted light/dark preferences.",
+    ],
+    tags: ["React Native", "Expo", "TypeScript", "Supabase", "PostgreSQL"],
+    color: "#7A3B5E",
+  },
 ];
 
 const EDUCATION = [
@@ -412,12 +428,91 @@ function SkillsSection() {
   );
 }
 
+function ProjectsSection() {
+  return (
+    <section id="Projects" className="py-24 px-6" style={{ background: "#1A1916" }}>
+      <div className="max-w-6xl mx-auto">
+        <div className="flex items-baseline gap-6 mb-16">
+          <span className="font-['DM_Mono'] text-xs tracking-[0.2em] uppercase" style={{ color: "#C4622D" }}>05</span>
+          <h2 className="font-['Playfair_Display'] font-bold text-5xl" style={{ color: "#F2EBD9" }}>Projects</h2>
+        </div>
+        <div>
+          {PROJECTS.map((project) => (
+            <div
+              key={project.name}
+              className="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-4 md:gap-12 py-10 border-b"
+              style={{ borderColor: "rgba(242,235,217,0.1)" }}
+            >
+              <div className="md:pt-1">
+                <div
+                  className="font-['DM_Mono'] text-xs tracking-wider mb-3 uppercase"
+                  style={{ color: project.color }}
+                >
+                  Side Project
+                </div>
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-1.5 font-['DM_Sans'] text-xs transition-colors"
+                  style={{ color: "rgba(242,235,217,0.5)" }}
+                  onMouseEnter={(e) => ((e.currentTarget as HTMLAnchorElement).style.color = "#F2EBD9")}
+                  onMouseLeave={(e) => ((e.currentTarget as HTMLAnchorElement).style.color = "rgba(242,235,217,0.5)")}
+                >
+                  View project <ArrowUpRight size={12} />
+                </a>
+              </div>
+              <div className="px-6">
+                <h3 className="font-['Playfair_Display'] font-bold text-2xl" style={{ color: "#F2EBD9" }}>
+                  {project.name}
+                </h3>
+                <div className="font-['DM_Sans'] text-sm font-medium mt-0.5" style={{ color: project.color }}>
+                  {project.tagline}
+                </div>
+                <p className="font-['DM_Sans'] font-light text-base leading-relaxed mt-4" style={{ color: "rgba(242,235,217,0.7)" }}>
+                  {project.description}
+                </p>
+                <ul className="mt-4 mb-5 space-y-2">
+                  {project.bullets.map((bullet) => (
+                    <li
+                      key={bullet}
+                      className="font-['DM_Sans'] font-light text-base leading-relaxed"
+                      style={{ color: "rgba(242,235,217,0.6)" }}
+                    >
+                      {bullet}
+                    </li>
+                  ))}
+                </ul>
+                <div className="flex flex-wrap gap-2">
+                  {project.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="font-['DM_Mono'] text-[11px] tracking-wide px-2.5 py-1"
+                      style={{
+                        background: "rgba(242,235,217,0.08)",
+                        color: "#F2EBD9",
+                        border: "1px solid rgba(242,235,217,0.15)",
+                      }}
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function EducationSection() {
   return (
     <section id="Education" className="py-24 px-6" style={{ background: "#F2EBD9" }}>
       <div className="max-w-6xl mx-auto">
         <div className="flex items-baseline gap-6 mb-16">
-          <span className="font-['DM_Mono'] text-xs tracking-[0.2em] uppercase" style={{ color: "#C4622D" }}>05</span>
+          <span className="font-['DM_Mono'] text-xs tracking-[0.2em] uppercase" style={{ color: "#C4622D" }}>06</span>
           <h2 className="font-['Playfair_Display'] font-bold text-5xl text-foreground">Education</h2>
         </div>
         <div>
@@ -486,7 +581,7 @@ function ContactSection() {
     <section id="Contact" className="py-24 px-6" style={{ background: "#2D5F8A" }}>
       <div className="max-w-6xl mx-auto">
         <div className="flex items-baseline gap-6 mb-10">
-          <span className="font-['DM_Mono'] text-xs tracking-[0.2em] uppercase" style={{ color: "rgba(242,235,217,0.45)" }}>06</span>
+          <span className="font-['DM_Mono'] text-xs tracking-[0.2em] uppercase" style={{ color: "rgba(242,235,217,0.45)" }}>07</span>
           <h2 className="font-['Playfair_Display'] font-bold text-5xl" style={{ color: "#F2EBD9" }}>Contact</h2>
         </div>
         <p className="font-['DM_Sans'] font-light text-lg leading-relaxed mb-10 max-w-lg" style={{ color: "rgba(242,235,217,0.7)" }}>
@@ -532,6 +627,7 @@ export default function App() {
         <ExperienceSection />
         <HighlightsSection />
         <SkillsSection />
+        <ProjectsSection />
         <EducationSection />
         <ContactSection />
       </main>
