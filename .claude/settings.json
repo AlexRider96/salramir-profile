@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(curl -sf http://localhost:5173)",
+      "Bash(break)",
+      "Read(//private/tmp/**)",
+      "Bash(command -v chromium-cli)",
+      "Bash(curl -s http://localhost:5173/salramir-profile/)",
+      "Bash(curl -s http://localhost:5173/src/main.tsx)",
+      "Bash(lsof -ti:5173 -sTCP:LISTEN)",
+      "Bash(xargs -r kill)",
+      "Bash(node -e ' *)",
+      "Bash(npx tsc *)"
+    ]
+  }
+}

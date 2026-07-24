@@ -1,0 +1,23 @@
+:root {
+  --background: #F2EBD9;
+  --foreground: #1A1916;
+  --border: rgba(26, 25, 22, 0.12);
+  --ring: #C4622D;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
