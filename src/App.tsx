@@ -199,7 +199,7 @@ function HeroSection() {
 
       <div className="relative max-w-6xl mx-auto px-6 pb-20 pt-32 w-full">
         <p className="font-['DM_Mono'] text-xs tracking-[0.25em] uppercase mb-8" style={{ color: "#C4622D" }}>
-          iOS Engineer — Brownsville, Texas
+          Software Engineer.
         </p>
         <h1
           className="font-['Playfair_Display'] font-black leading-[0.88] tracking-tight mb-10"

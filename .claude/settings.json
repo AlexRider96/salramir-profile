@@ -12,7 +12,9 @@
       "Bash(lsof -ti:5173 -sTCP:LISTEN)",
       "Bash(xargs -r kill)",
       "Bash(node -e ' *)",
-      "Bash(npx tsc *)"
+      "Bash(npx tsc *)",
+      "Bash(gh repo *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" https://alexrider96.github.io/salramir-profile/)"
     ]
   }
 }
